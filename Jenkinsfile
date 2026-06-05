@@ -56,7 +56,6 @@ pipeline {
                     experession {
                           "${params.DEPLOY}" == "true"
                     }
-                }
                 steps {
                      script {
                          sh """
