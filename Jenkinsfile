@@ -11,6 +11,7 @@ pipeline {
                          sh """
                                  echo "BUILDING"
                          """
+                         exit 0
                      }
                 }
             }
