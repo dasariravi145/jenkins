@@ -44,6 +44,14 @@ pipeline {
                 }
             }
             stage('Deploy') {
+                input {
+                    message "Should  I deploy"
+                    ok "yes, we should."
+                    submitter "admin"
+                    parameters {
+                         string(name: 'VERSION', defaultValue:'Mr Jenkins',description: 'who should I say hello to?')
+                    }
+                }
                 steps {
                      script {
                          sh """
