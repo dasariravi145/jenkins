@@ -4,12 +4,16 @@ pipeline {
            {
             label 'ROBOSHOP'
        }
+       environment {
+            COURSE = "jenkins"
+       }
          stages {
             stage('Build') {
                 steps {
                      script {
                          sh """
                                  echo "BUILDING"
+                                 echo $COURSE
                          """
                      }
                 }
