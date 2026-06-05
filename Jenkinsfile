@@ -44,12 +44,17 @@ pipeline {
                 }
             }
             stage('Deploy') {
-                input {
+               /* input {
                     message "Should  I deploy"
                     ok "yes, we should."
                     submitter "admin"
                     parameters {
                          string(name: 'VERSION', defaultValue:'Mr Jenkins',description: 'who should I say hello to?')
+                    }
+                }*/
+                when {
+                    experession {
+                          "${params.DEPLOY}" == "true"
                     }
                 }
                 steps {
