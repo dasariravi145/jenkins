@@ -33,10 +33,9 @@ pipeline {
                 }
             }
          }
-    #post build
     post {
         always {
-            echo 'I will always say Hello agian'
+            echo 'Pipeline completed'
         }
     }
 }
