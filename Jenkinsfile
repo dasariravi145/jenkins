@@ -1,7 +1,12 @@
 pipeline {
 
-    agent {
-        label 'ROBOSHOP'
+    agent 
+    {
+       node {
+
+            label 'ROBOSHOP'
+       }
+        
     }
 
     environment {
