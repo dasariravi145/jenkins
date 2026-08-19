@@ -52,8 +52,9 @@ pipeline {
 
         stage('Deploy') {
             when {
-                
-                    experession {"${params.DEPLOY}" == "true"}
+                expression {
+                     params.DEPLOY
+              }
             }
             steps {
                 sh """
