@@ -27,5 +27,8 @@ pipeline {
 
                     echo 'cleanup and build completed'
             }
+            failed {
+                    echo 'Build failed'
+            }
       }
 }
