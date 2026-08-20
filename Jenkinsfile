@@ -14,8 +14,10 @@ pipeline {
             stage('Build') {
 
                   steps {
+                        sh """
                         echo 'Building the Project'
                         echo ${COURSE}
+                        """
                   }
             }
             stage('install') {
