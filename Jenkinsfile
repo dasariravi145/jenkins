@@ -6,13 +6,16 @@ pipeline {
                   label 'ROBOSHOP' 
             }
       }
+      environment {
+               COURSE = "Jenkins"
+      }
       stages {
 
             stage('Build') {
 
                   steps {
                         echo 'Building the Project'
-                        exit 1
+                        echo ${COURSE}
                   }
             }
             stage('install') {
