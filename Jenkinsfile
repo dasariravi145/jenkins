@@ -12,6 +12,7 @@ pipeline {
 
                   steps {
                         echo 'Building the Project'
+                        exit 1
                   }
             }
             stage('install') {
