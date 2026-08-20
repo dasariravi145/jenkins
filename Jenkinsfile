@@ -23,12 +23,14 @@ pipeline {
 
       }
       post {
-            always {
-
-                    echo 'cleanup and build completed'
-            }
-            failure {
-                    echo 'Build failed'
-            }
+            always { 
+            echo 'I will always say Hello again!'
+        }
+        success {
+            echo "pipeline success"
+        }
+        failure {
+            echo "pipeline failure"
+        }
       }
 }
