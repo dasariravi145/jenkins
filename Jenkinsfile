@@ -21,4 +21,10 @@ pipeline {
             }
 
       }
+      post {
+            always {
+
+                    echo 'cleanup and build completed'
+            }
+      }
 }
