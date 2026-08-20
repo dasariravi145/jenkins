@@ -17,6 +17,7 @@ pipeline {
             stage('test'){
                     steps{
                         echo 'Testing the Project'
+                        exit
                     }
             }
 
