@@ -18,7 +18,7 @@ pipeline {
 
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
 
-        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        booleanParam(name: 'DEPLOYE', defaultValue: false, description: 'Deployee this value')
 
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 
@@ -45,9 +45,19 @@ pipeline {
                         sh """
                         echo "Hello ${params.PERSON}"
                         echo "Biography: ${params.BIOGRAPHY}"
-                        echo "Toggle: ${params.TOGGLE}"
+                        echo "DEPLOYE: ${params.DEPLOYE}"
                         echo "Choice: ${params.CHOICE}"
                         echo "Password: ${params.PASSWORD}"
+                        """
+                    }
+            }
+            stage('deployee'){
+                  when {
+                        expression { return params.DEPLOYE }
+                  }
+                    steps{
+                        sh """
+                            echo "Deployee the Project"
                         """
                     }
             }
